@@ -33,5 +33,8 @@ Start time (pass): 15:0
 End time (pass): 15:30
 The ground station has the bandwidth to support this: Yes
 
+### Small example
+![image](https://user-images.githubusercontent.com/17574739/190163456-3bdcf676-a80a-4cda-a6fb-27a56eeaa213.png)
+
 # Tests
 Unit tests are located in test/java/com/space using Junit.
