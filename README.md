@@ -32,3 +32,6 @@ Max bandwidth: 1309 per 30 min
 Start time (pass): 15:0
 End time (pass): 15:30
 The ground station has the bandwidth to support this: Yes
+
+# Tests
+Unit tests are located in test/java/com/space using Junit.

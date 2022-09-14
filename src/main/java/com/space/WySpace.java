@@ -31,14 +31,15 @@ public class WySpace {
             HashMap<String, Satellite> satelliteData = Utils.readData(Constants.DATA_PATH);
 
             // fill the time frame of one day in minutes in a list - 1440 min 0 list size
+            DownLinkProgram downLinkProgram = new DownLinkProgram();
             satelliteData.forEach((satelliteName, satellite) -> {
                 satellite.getPasses().forEach(currPass -> {
-                    DownLinkProgram.fillTimeframe(timeframe, currPass.getPassStart(), currPass.getPassEnd(), satellite.getBandwidth());
+                    downLinkProgram.fillTimeframe(timeframe, currPass.getPassStart(), currPass.getPassEnd(), satellite.getBandwidth());
                 });
             });
 
             // find max bandwidth in 30-min timeframe
-            Result result = DownLinkProgram.findDownLinkMaxRate(timeframe);
+            Result result = downLinkProgram.findDownLinkMaxRate(timeframe, Constants.PERIOD_IN_MIN);
 
             // print results in a file /data/results.txt
             Utils.writeResults(
